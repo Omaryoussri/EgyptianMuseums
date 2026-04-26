@@ -5,6 +5,52 @@ body{
 div{
     margin-top: 10px;
 }
+nav{
+background: linear-gradient(rgba(0, 0, 0, 0.508));
+padding: 20px;
+}
+ul{
+display: flex;
+justify-content: center;
+gap: 40px;
+}
+li{
+list-style: none;
+}
+.theme{
+font-size: 25px;
+font-weight: bold;
+color: white;
+position: relative;
+ font-family: "Shojumaru", system-ui;
+}
+.theme::after{
+width: 0px;
+height: 2px;
+left: 0;
+bottom:-5px;
+position: absolute;
+content: "";
+transition: 0.4s;
+background: gold;
+}
+.theme:hover::after{
+width: 100%;
+}
+.theme:hover{
+color: gold;
+transform: scale(1.2) translateX(-5px) ;
+text-shadow: 0 0 10px gold;    
+}
+footer{
+font-weight: bold;
+color: white;
+font-size: 20px;
+background:linear-gradient(rgba(0, 0, 0, 0.508));
+padding: 20px;
+text-align: center;    
+margin-top: -15px;
+}
  p, h2, h3{
     color: #2D4B53;
     border-radius:5px ;
