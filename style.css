@@ -1,0 +1,76 @@
+body{
+    background-color: #D7D3C5;
+    font: 1em sans-serif;
+}
+div{
+    margin-top: 10px;
+}
+ p, h2, h3{
+    color: #2D4B53;
+    border-radius:5px ;
+}
+.nmec{
+    text-align: center;
+    background-image: url(nmec-outside-view.webp);
+    border: 3px solid black;
+    border-radius: 5px;
+}
+.gem{
+    text-align: center;
+     background-image: url(unnamed.webp);
+     background-repeat:no-repeat ;
+     background-size:cover ;
+    border: 3px solid black;
+    border-radius: 5px;
+    
+}
+.egmc{
+    text-align: center;
+     background-image: url(unnamed\ \(1\).webp);
+     background-repeat:no-repeat ;
+     background-size:cover ;
+     border: 3px solid black;
+     border-radius: 5px;   
+}
+table{
+    width: 50%;  
+    background-color: white; 
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 40px auto 50px auto;  
+}
+ th {
+    background-color:white;
+    color: black;
+    text-align: left; 
+    padding: 15px 20px; 
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    white-space: nowrap; 
+}
+td{
+    padding: 15px 20px; 
+    color: black; 
+    border-bottom: 2px solid goldenrod;
+    border-top: 2px solid goldenrod;
+}
+ tr:nth-child(even) {
+    background-color: goldenrod; 
+}
+tr:hover {
+    background-color: goldenrod; 
+    
+}
+tr:last-child td {
+    border-bottom: none;
+}
+a{
+    color:black;
+}
+a:hover{
+    color: white;
+}
+a:visited{
+    color: black;
+    text-decoration: none;
+}
