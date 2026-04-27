@@ -1,31 +1,45 @@
-html, body{
-    background-image: url(WhatsApp\ Image\ 2026-04-26\ at\ 10.41.40\ PM.jpeg);
-    font: 1em sans-serif;
+@media (max-width: 768px){
+    ul{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .theme{
+        font-size: 20px;
+    }
+}
+body{
+background: linear-gradient(
+rgba(0,0,0,0.75),
+rgba(20,20,20,0.80)
+),
+url(chat.jpg); 
+   font: 1em sans-serif;
     font-weight: bold;
     background-position: center;
     background-attachment:fixed ;
     background-size:cover ;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 div{
     margin-top: 50px;
 }
 nav{
-background: #3B2F2F;
+background: linear-gradient(rgba(0, 0, 0, 0.508));
 padding: 20px;
-position: absolute;
 top:0;
 left: 0;
+position: absolute;
 width: 100%;
 z-index: 1000;
-border-bottom: 3px solid #8B5E3C;
+height: 70px;
 }
-
 ul{
 display: flex;
 justify-content: center;
+padding: 20px;
+margin: 0;
 gap: 40px;
 }
 li{
@@ -34,13 +48,13 @@ list-style: none;
 .theme{
 font-size: 25px;
 font-weight: bold;
-color: #FAF3E0;
+color: white;
 position: relative;
  font-family: "Shojumaru", system-ui;
  text-decoration: none;
 }
-.theme,  .theme:visited{
-    color: #FAF3E0;
+.theme, .theme:visited {
+    color: #FFFFFF; 
 }
 .theme::after{
 width: 0px;
@@ -50,30 +64,50 @@ bottom:-5px;
 position: absolute;
 content: "";
 transition: 0.4s;
- background:#006699;;   
- 
+background: gold;
 }
 .theme:hover::after{
 width: 100%;
 }
 .theme:hover{
-color:#006699;
+color: gold;
 transform: scale(1.2) translateX(-5px) ;
-text-shadow: 0 0 10px #006699;    
+text-shadow: 0 0 10px gold;    
 }
 footer{
 font-weight: bold;
-color: #FAF3E0;
+color: white;
 font-size: 20px;
-background-color: #2C1F1F; 
+background:linear-gradient(rgba(0, 0, 0, 0.508));
 padding: 20px;
 text-align: center;    
-border-top: 3px solid #8B5E3C;
 margin-top: -15px;
 width: 100%;
+z-index: 1000;
 }
-footer p {
-    margin: 5px auto 0 auto;
+.links{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,auto);
+    gap: 10px;
+}
+.item{
+    padding: 3px;
+    text-align: center;
+}
+.links a, .links a:visited {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    color:aliceblue;
+    text-transform: capitalize;
+    transition: transform 0.3s ease,color 0.3s ease;
+}
+.links a:hover{
+    color: gold;
+    transform: scale(1.2) translateX(-5px) ;
+    text-shadow: 0 0 10px gold;  
+    transition: 0.4s;
 }
 h2, h3{
     color:  #8B5E3C;
@@ -101,11 +135,6 @@ table{
     border: 2px solid black;
     border-radius: 8px;
     margin: 40px auto 50px auto;  
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space:nowrap;
-    -webkit-overflow-scrolling: touch;
 }
  th {
     border-right: 1px solid black; 
@@ -146,36 +175,4 @@ a:hover{
 a:visited{
     color: #663399;
     text-decoration: none;
-}
-@media (max-width: 768px){
-    ul{
-        flex-wrap: wrap;
-        gap: 15px;
-        padding: 0;
-    }
-    .theme{
-        font-size: 16px;
-    }
-    nav{
-        padding: 10px;
-        position: relative;
-    }
-    .nmec, .gem, .egmc, footer, .navbar{
-        width: 100%;
-        box-sizing: border-box;
-        padding: 10px;
-        margin: 0;
-    }
-    p, div{
-        max-width: 100%;
-    }
-}
-img{
-    max-width: 100%;
-    height: auto;
-}
-.nmec, .gem, .egmc{
-    max-width:100% ;
-    box-sizing: border-box;
-    padding: 15px;
 }
