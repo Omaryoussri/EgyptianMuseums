@@ -155,3 +155,12 @@ a:visited{
         position: relative;
     }
 }
+img{
+    max-width: 100%;
+    height: auto;
+}
+.nmec, .gem, .egmc{
+    max-width:100% ;
+    box-sizing: border-box;
+    padding: 15px;
+}
