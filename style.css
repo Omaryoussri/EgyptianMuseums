@@ -1,12 +1,7 @@
-@media (max-width: 768px){
-    ul{
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .theme{
-        font-size: 20px;
-    }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;    /* stops horizontal scroll */
 }
 body{
 background: linear-gradient(
@@ -41,7 +36,9 @@ justify-content: center;
 padding: 20px;
 margin: 0;
 gap: 40px;
+flex-wrap: wrap;
 }
+
 li{
 list-style: none;
 }
@@ -74,26 +71,33 @@ color: gold;
 transform: scale(1.2) translateX(-5px) ;
 text-shadow: 0 0 10px gold;    
 }
+
 footer{
 font-weight: bold;
 color: white;
-font-size: 20px;
+font-size: 16px;
 background:linear-gradient(rgba(0, 0, 0, 0.508));
-padding: 20px;
+padding: 10px;
 text-align: center;    
-margin-top: -15px;
-width: 100%;
-z-index: 1000;
+margin: 0;
+width: 100%;          
+max-width: 100%;     
+box-sizing: border-box; 
+overflow-x: hidden;   
+display: block;
 }
 .links{
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(4,auto);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+
     gap: 10px;
+      max-width: 100%;     
+    margin: 0 auto;
 }
 .item{
     padding: 3px;
     text-align: center;
+    
 }
 .links a, .links a:visited {
     display: inline-block;
@@ -109,6 +113,7 @@ z-index: 1000;
     text-shadow: 0 0 10px gold;  
     transition: 0.4s;
 }
+
 h2, h3{
     color:  #8B5E3C;
     background: #F5F5DC;
@@ -130,7 +135,7 @@ p{
 }
 
 table{
-    width: 50%;  
+    width: 80%;  
     background-color: #FAF3E0; 
     border: 2px solid black;
     border-radius: 8px;
@@ -175,4 +180,56 @@ a:hover{
 a:visited{
     color: #663399;
     text-decoration: none;
+}
+@media (max-width: 768px) {
+    ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .theme {
+        font-size: 20px;
+    }
+
+    nav {
+        height: auto;
+        padding: 15px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .links {
+        grid-template-columns: 1fr; /* stack links */
+    }
+
+    table {
+        width: 95%; /* shrink slightly on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme {
+        font-size: 18px;
+    }
+
+    table {
+        width: 100%;
+        display: block;   /* scrollable if too wide */
+        overflow-x: auto;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 6px;
+    }
 }
