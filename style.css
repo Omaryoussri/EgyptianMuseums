@@ -23,13 +23,14 @@ div{
 nav{
 background: linear-gradient(rgba(0, 0, 0, 0.508));
     padding: 20px;
-    top: 0;
-    left: 0;
-    position: absolute;
+    box-sizing: border-box;
     width: 100%;
     z-index: 1000;
     min-height: 70px; 
     height: auto;
+}
+.navbar{
+    margin-top: 0;
 }
 ul{
 display: flex;
@@ -220,10 +221,19 @@ a:visited{
 
     table {
         width: 100%;
-        display: block;   
+        
         table-layout: fixed;
     }
+    .table2 {
+    table-layout: fixed;
+    width: 100%;
+}
 
+.table2 th, .table2 td {
+    width: 50%;
+    white-space: normal;
+    word-wrap: break-word; 
+}
     th, td {
         padding: 6px;
         font-size: 12px;
