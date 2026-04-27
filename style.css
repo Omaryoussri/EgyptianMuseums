@@ -2,19 +2,26 @@ body{
     background-image: url(WhatsApp\ Image\ 2026-04-26\ at\ 10.41.40\ PM.jpeg);
     font: 1em sans-serif;
     font-weight: bold;
+    background-position: center;
+    background-attachment:fixed ;
+    background-size:cover ;
+    margin: 0;
+    padding: 0;
 }
 div{
     margin-top: 50px;
 }
 nav{
-background: linear-gradient(rgba(0, 0, 0, 0.508));
+background: #3B2F2F;
 padding: 20px;
 position: absolute;
 top:0;
 left: 0;
 width: 100%;
 z-index: 1000;
+border-bottom: 3px solid #8B5E3C;
 }
+
 ul{
 display: flex;
 justify-content: center;
@@ -26,9 +33,13 @@ list-style: none;
 .theme{
 font-size: 25px;
 font-weight: bold;
-color: white;
+color: #FAF3E0;
 position: relative;
  font-family: "Shojumaru", system-ui;
+ text-decoration: none;
+}
+.theme,  .theme:visited{
+    color: #FAF3E0;
 }
 .theme::after{
 width: 0px;
@@ -38,68 +49,51 @@ bottom:-5px;
 position: absolute;
 content: "";
 transition: 0.4s;
-background: gold;
+ background:#006699;;   
+ 
 }
 .theme:hover::after{
 width: 100%;
 }
 .theme:hover{
-color: gold;
+color:#006699;
 transform: scale(1.2) translateX(-5px) ;
-text-shadow: 0 0 10px gold;    
+text-shadow: 0 0 10px #006699;    
 }
 footer{
 font-weight: bold;
-color: white;
+color: #FAF3E0;
 font-size: 20px;
-background:linear-gradient(rgba(0, 0, 0, 0.508));
+background-color: #2C1F1F; 
 padding: 20px;
 text-align: center;    
-margin-top: 50px;
+border-top: 3px solid #8B5E3C;
+margin-top: -15px;
 width: 100%;
-
+}
+footer p {
+    margin: 5px auto 0 auto;
 }
 h2, h3{
-    color:  #C19A6B;
+    color:  #8B5E3C;
     background: #F5F5DC;
     width: fit-content;
     margin-right: auto;
     margin-left: auto;
     border-radius:5px ;
-    padding: 10px;
+    padding: 5px;
 }
 p{
-    color:  #C19A6B;
+    color:  #2E2E2E;
     background: #F5F5DC;
     width: 50%;
     margin-right: auto;
     margin-left: auto;
     border-radius:5px ;
-    padding: 10px;
+    padding: 5px;
+    font-weight: bold;
 }
-.nmec{
-    
-    background-image: url(nmec-outside-view.webp);
-    border: 3px solid black;
-    border-radius: 5px;
-}
-.gem{
-    
-     background-image: url(unnamed.webp);
-     background-repeat:no-repeat ;
-     background-size:cover ;
-    border: 3px solid black;
-    border-radius: 5px;
-    
-}
-.egmc{
-    
-     background-image: url(unnamed\ \(1\).webp);
-     background-repeat:no-repeat ;
-     background-size:cover ;
-     border: 3px solid black;
-     border-radius: 5px;   
-}
+
 table{
     width: 50%;  
     background-color: #FAF3E0; 
@@ -109,17 +103,17 @@ table{
 }
  th {
     border-right: 1px solid black; 
-    background-color:white;
-    color: #C19A6B;
+    background-color:#C19A6B;
+    color: #2E2E2E;
     text-align: left; 
     padding: 15px 20px; 
-    font-weight: 500;
+    font-weight: bold;
     letter-spacing: 0.5px;
     white-space: nowrap; 
 }
 td{
    border-right: 1px solid black; 
-    padding: 15px 20px; 
+    padding: 8px; 
     color: #444444; 
     border-bottom: 2px solid #444444;
     border-top: 2px solid #444444;
@@ -146,4 +140,18 @@ a:hover{
 a:visited{
     color: #663399;
     text-decoration: none;
+}
+@media (max-width: 768px){
+    ul{
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0;
+    }
+    .theme{
+        font-size: 16px;
+    }
+    nav{
+        padding: 10px;
+        position: relative;
+    }
 }
