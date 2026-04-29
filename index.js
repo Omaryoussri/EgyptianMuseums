@@ -1,18 +1,28 @@
+
 let currentTheme = localStorage.getItem("theme");
-if (currentTheme == "dark") {
-    document.getElementsByTagName("body")[0].className = "dark-theme";
+
+
+if (currentTheme == "light") {
+    document.getElementsByTagName("body")[0].className = "light-theme";
+    document.getElementById("themeBtn").innerHTML = "Dark Theme";
+} else {
+    document.getElementById("themeBtn").innerHTML = "Light Theme";
 }
 
 function toggleTheme() {
     let body = document.getElementsByTagName("body")[0];
     let themeState = localStorage.getItem("theme");
 
-    if (themeState == "dark") {
+    
+    if (themeState == "light") {
         body.className = ""; 
-        localStorage.setItem("theme", "light");
-    } else {
-        body.className = "dark-theme"; 
         localStorage.setItem("theme", "dark"); 
+        document.getElementById("themeBtn").innerHTML = "Light Theme";
+    } else {
+        
+        body.className = "light-theme"; 
+        localStorage.setItem("theme", "light"); 
+        document.getElementById("themeBtn").innerHTML = "Dark Theme";
     }
 }
 
