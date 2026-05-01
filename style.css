@@ -6,7 +6,7 @@ html, body {
 
 
 body {
-    background: linear-gradient(rgba(15, 18, 25, 0.90), rgba(10, 12, 18, 0.95)), url('chat.jpg');
+    background: linear-gradient(rgba(15, 18, 25, 0.75), rgba(10, 12, 18, 0.80)), url('chat.jpg');
     font: 1em sans-serif;
     font-weight: bold;
     background-position: center;
@@ -149,11 +149,31 @@ p {
 
 
 table {
-    width: 80%;  
-    background-color: #1E212D;
-    border: 2px solid #D4AF37;
-    border-radius: 8px;
-    margin: 40px auto 50px auto;  
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: separate; 
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #D4AF37; 
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); 
+}
+
+table:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.2);
+}
+
+
+tr {
+    transition: background-color 0.3s ease;
+}
+
+
+tr:hover td, tr:hover {
+    background-color: #2A2E3F !important; 
+    color: #fff;
+    cursor: pointer;
 }
 
 th {
@@ -169,17 +189,24 @@ th {
 
 td {
     color: #E0E0E0;
-    border-top: 2px solid #333645;
-    border-bottom: 2px solid #333645;
+    
+    border-top: 1px solid #333645;
+    border-bottom: 1px solid #333645;
     border-right: 1px solid #D4AF37;
-    padding: 8px; 
+    padding: 12px; 
 }
+
 
 tr:nth-child(even) { background-color: #181A24; }
 tr:nth-child(odd) { background-color: #1E212D; }
-tr:hover { background-color: #2A2E3F; }
+
+
 tr:last-child td { border-bottom: none; }
 
+
+body.light-theme table:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
 
 a, a:visited {
     color: #D4AF37; 
@@ -329,115 +356,160 @@ a:hover, table a:hover {
 .links a:hover {
     color: gold !important;
 }
+#totalOutput {
+    text-align: center;      
+    width: 100%;            
+    display: block;         
+    margin: 20px auto 20px auto;       
+    color: #ffcc00;          
+}
+
+#bookingSection {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    text-align: center;
+    padding: 20px;
+}
+
+
+#totalOutput {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.museum-title {
+    font-size: 2.2em; 
+    font-family: 'Shojumaru', system-ui, serif; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+
+.museum-title:hover {
+    transform: scale(1.02);
+    filter: brightness(1.2);
+}
+
+.museum-title {
+    color: #D4AF37; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); 
+}
 
 
 
 body.light-theme {
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(20,20,20,0.80)), url('chat.jpg');
+    
+    background: linear-gradient(rgba(15, 18, 25, 0.75), rgba(10, 12, 18, 0.80)), url('chat.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    color: #000;
 }
 
-body.light-theme nav {
-    background: rgba(255, 255, 255, 0.395);
-}
 
-
-body.light-theme .theme, 
-body.light-theme .theme:visited {
-    color: black !important;
-}
-
-body.light-theme h2, 
-body.light-theme h3 {
-    color: #8B5E3C;
-    background: #F5F5DC;
-}
-
-body.light-theme p {
-    color: #2E2E2E;
-    background: #F5F5DC;
+body.light-theme nav, 
+body.light-theme footer {
+    background: rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    color: #000;
 }
 
 body.light-theme table {
-    background-color: #FAF3E0; 
-    border-color: black;
+    background-color: rgba(120, 120, 120, 0.5) !important; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px; 
+    backdrop-filter: blur(15px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3); 
+    border-collapse: separate; 
+    overflow: hidden;
 }
 
 body.light-theme th {
-    background-color:#C19A6B;
-    color: #2E2E2E;
-    border-right-color: black; 
+    background-color: rgba(0, 0, 0, 0.2); 
+    color: #fff; 
+    padding: 15px;
+    border: none;
 }
 
 body.light-theme td {
-    color: #444444; 
-    border-bottom-color: #444444;
-    border-top-color: #444444;
-    border-right-color: black; 
+    color: #fff; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: none;
+    padding: 12px;
 }
 
-body.light-theme tr:nth-child(even) { background-color: #F5F5DC; }
-body.light-theme tr:nth-child(odd) { background-color: #FFFFFF; }
-body.light-theme tr:hover { background-color: #FFE4B5; }
+body.light-theme tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.05); }
+body.light-theme tr:hover { background-color: rgba(255, 255, 255, 0.1); }
 
-body.light-theme a { color:#006699; }
-body.light-theme a:hover { color: #CC6600; text-shadow: none; }
-body.light-theme a:visited { color: #663399; }
 
 body.light-theme #bookingSection {
-    background: #F5F5DC;
-    border-color: #8B5E3C;
-    color: #2E2E2E;
+    background: rgba(120, 120, 120, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 body.light-theme #bookingSection select, 
 body.light-theme #bookingSection input[type="number"] {
-    border: 2px solid #8B5E3C;
-    background-color: #FFFFFF;
-    color: #2E2E2E;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #fff;
+    border-radius: 10px;
 }
 
-body.light-theme #bookingSection select:focus, 
-body.light-theme #bookingSection input[type="number"]:focus {
-    border-color: #C19A6B;
-    box-shadow: 0 0 8px rgba(193, 154, 107, 0.6);
+
+body.light-theme h2, 
+body.light-theme h3 {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 15px;
 }
 
-body.light-theme #calcBtn, 
-body.light-theme #visitBtn {
-    color: white;
+body.light-theme p {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
     border: none;
-}
-
-body.light-theme #calcBtn { background-color: #8B5E3C; }
-body.light-theme #visitBtn { background-color: #006699; }
-
-body.light-theme #calcBtn:hover { background-color: #6A442A; box-shadow: none; }
-body.light-theme #visitBtn:hover { background-color: #004C73; box-shadow: none; }
-
-body.light-theme #totalOutput {
-    color: #2E2E2E;
-}
-
-body.light-theme label b {
-    color: #2E2E2E;
+    border-radius: 15px;
 }
 
 
-body.light-theme footer {
-    background: rgba(255, 255, 255, 0.395);
-    color: black;
+body.light-theme #themeBtn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+body.light-theme #themeBtn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
 }
 
 
-body.light-theme .links a, 
-body.light-theme .links a:visited {
-    color: black !important;
+body.light-theme .links a {
+    color: black !important; 
 }
-
 
 body.light-theme .links a:hover {
-     color: gold !important;
-    transform: scale(1.2) translateX(-5px) ;
-    text-shadow: 0 0 10px gold;  
-    transition: 0.4s;
+    color: #fff !important;
 }
+
+body.light-theme .museum-title {
+    color: #ffffff !important; 
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 10px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
