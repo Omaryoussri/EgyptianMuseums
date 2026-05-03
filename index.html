@@ -11,20 +11,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <div class="navbar">
+    <div class="bar">
 <nav>
 <ul>
-   <li><a class="theme" href="https://ahmvd-170.github.io/Home/">Home</a></li>
-   <li><a class="theme" href="https://moemad1707-cmyk.github.io/login/">Login</a></li>
-    <li><a class="theme"  href="https://adelhassan-sys.github.io/Adel/">Sign Up</a></li>
-    <li><a class="theme"  href="https://ahmed-essam-abdelhamid.github.io/Museums/">Museums</a></li>
-    <li><a class="theme" href="https://mahmoudayman45p-pixel.github.io/courses-3/">Search</a></li>
-    <li><a class="theme" href="https://ziadfaisal06-cmd.github.io/GALLERY/">Gallery</a></li>
-    <li><a class="theme" href="#">Ticket Prices</a></li>
-    <li><a class="theme" href="https://omardezny1234-eng.github.io/Contact-USs/">Contact Us</a></li>
+   <li><a class="dark-theme" href="https://ahmvd-170.github.io/Home/">Home</a></li>
+   <li><a class="dark-theme" href="https://moemad1707-cmyk.github.io/login/">Login</a></li>
+    <li><a class="dark-theme" href="https://adelhassan-sys.github.io/Adel/">Sign Up</a></li>
+    <li><a class="dark-theme" href="https://ahmed-essam-abdelhamid.github.io/Museums/">Museums</a></li>
+    <li><a class="dark-theme" href="https://mahmoudayman45p-pixel.github.io/courses-3/">Search</a></li>
+    <li><a class="dark-theme" href="https://ziadfaisal06-cmd.github.io/GALLERY/">Gallery</a></li>
+    <li><a class="dark-theme" href="#">Ticket Prices</a></li>
+    <li><a class="dark-theme" href="https://omardezny1234-eng.github.io/Contact-USs/">Contact Us</a></li>
 </ul>
+    <button onclick="changeTheme()" id="dark-theme-button">Light Theme</button>
    </nav>
-     <button onclick="toggleTheme()" id="themeBtn">Light Theme</button>
+     
  </div>
 <br><br><br>
     <main>
@@ -166,7 +167,7 @@
             </tr>
         </table>
     </div>
-   <div id="bookingSection">
+   <div id="booking">
     <h2>Book Your Tickets</h2>
     
     <label><b>Museum:</b></label>
@@ -190,9 +191,9 @@
     <input type="number" id="quantity" value="1" min="1">
     <br><br>
 
-    <button id="calcBtn" onclick="calculateTotal()">Calculate Price</button>
+    <button id="calc" onclick="calculateTotal()">Calculate Price</button>
     
-    <h3 id="totalOutput">Total Price: 0 EGP</h3>
+    <h3 id="total">Total Price: 0 EGP</h3>
 
     <a id="visitLink" href="#" target="_blank">
         <button id="visitBtn">Visit Museum Website</button>
@@ -201,17 +202,10 @@
     <script src="index.js"></script>
     </main>
  <footer class="footer">
-            <p >© 2026 All Rights Reserved</p>
-            <p>This website was designed and developed by: </p>
-            <div class="links">
-                <div class="item"><a href="">ahmed mohamed</a></div>
-                <div class="item"><a href="">omar youssry</a></div>
-                <div class="item"><a href="">omar ibrahim</a></div>
-                <div class="item"><a href="">adel hassan</a></div>
-                <div class="item"><a href="">ziad faisal</a></div>
-                <div class="item"><a href="">mohamed emad</a></div>
-                <div class="item"><a href="">ahmed essam</a></div>
-                <div class="item"><a href="">mahmoud ayman</a></div>
+            <p class="footerp">© 2026 All Rights Reserved</p>
+            <p>This website was designed and developed by: This website was designed and developed by Omar Ibrahim , Ziad Fiasal , Adel Hassan ,
+                 Ahmed Mohamed ,Omar Youssry , Ahmed Essam , Mohamed Emad , Mahmoud Ayman</p>
+          
             </div>
         </footer>
 </body>

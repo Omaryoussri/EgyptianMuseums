@@ -1,75 +1,68 @@
 
 let currentTheme = localStorage.getItem("theme");
+let body = document.getElementsByTagName("body")[0];
+let themeBtn = document.getElementById("dark-theme-button");
 
-
-if (currentTheme == "light") {
-    document.getElementsByTagName("body")[0].className = "light-theme";
-    document.getElementById("themeBtn").innerHTML = "Dark Theme";
+if (currentTheme === "light") {
+    body.className = "light-theme";
+    themeBtn.innerHTML = "Dark Theme";
 } else {
-    document.getElementById("themeBtn").innerHTML = "Light Theme";
+    body.className = ""; 
+    themeBtn.innerHTML = "Light Theme";
 }
 
-function toggleTheme() {
+function changeTheme() {
     let body = document.getElementsByTagName("body")[0];
+    let themeBtn = document.getElementById("dark-theme-button");
     let themeState = localStorage.getItem("theme");
 
-    
-    if (themeState == "light") {
+    if (themeState === "light") {
         body.className = ""; 
         localStorage.setItem("theme", "dark"); 
-        document.getElementById("themeBtn").innerHTML = "Light Theme";
+        themeBtn.innerHTML = "Light Theme";
     } else {
-        
         body.className = "light-theme"; 
         localStorage.setItem("theme", "light"); 
-        document.getElementById("themeBtn").innerHTML = "Dark Theme";
+        themeBtn.innerHTML = "Dark Theme";
     }
 }
 
 
 function calculateTotal() {
-  
     let museum = document.getElementById("museum").value;
     let category = document.getElementById("category").value;
-    let quantity = document.getElementById("quantity").value;
+    let quantity = parseInt(document.getElementById("quantity").value) || 0;
     let price = 0;
+    let link = "#";
 
-   
-    if (museum == "NMEC") {
-        if (category == "EgyAdult") { price = 90; }
-        if (category == "EgyStudent") { price = 45; }
-        if (category == "ForAdult") { price = 500; }
-        if (category == "ForStudent") { price = 250; }
-        
-        
-        document.getElementById("visitLink").href = "https://nmec.gov.eg/";
-    }
-
-   
-    if (museum == "GEM") {
-        if (category == "EgyAdult") { price = 350; }
-        if (category == "EgyStudent") { price = 175; }
-        if (category == "ForAdult") { price = 1700; }
-        if (category == "ForStudent") { price = 850; }
-        
-       
-        document.getElementById("visitLink").href = "https://gem.eg/";
+     if (museum === "NMEC") {
+        link = "https://nmec.gov.eg/";
+        if (category === "EgyAdult") { price = 90; }
+        else if (category === "EgyStudent") { price = 45; }
+        else if (category === "ForAdult") { price = 500; }
+        else if (category === "ForStudent") { price = 250; }
     }
 
     
-    if (museum == "EMC") {
-        if (category == "EgyAdult") { price = 60; }
-        if (category == "EgyStudent") { price = 30; }
-        if (category == "ForAdult") { price = 240; }
-        if (category == "ForStudent") { price = 120; }
-        
-   
-        document.getElementById("visitLink").href = "https://egyptianmuseumcairo.eg/";
+    else if (museum === "GEM") {
+        link = "https://gem.eg/";
+        if (category === "EgyAdult") { price = 350; }
+        else if (category === "EgyStudent") { price = 175; }
+        else if (category === "ForAdult") { price = 1700; }
+        else if (category === "ForStudent") { price = 850; }
     }
 
-  
+    
+    else if (museum === "EMC") {
+        link = "https://egyptianmuseumcairo.eg/";
+        if (category === "EgyAdult") { price = 60; }
+        else if (category === "EgyStudent") { price = 30; }
+        else if (category === "ForAdult") { price = 240; }
+        else if (category === "ForStudent") { price = 120; }
+    }
+
+    
     let total = price * quantity;
-    
-    
-    document.getElementById("totalOutput").innerHTML = "Total Price: " + total + " EGP";
+    document.getElementById("visitLink").href = link;
+    document.getElementById("total").innerHTML = "Total Price: " + total + " EGP";
 }
